@@ -1,0 +1,67 @@
+td{
+	height: 100px;
+	width:100px;
+	background-size:100%
+}
+
+.middlecolumn{
+	border-left: 2px solid gray;
+	border-right: 2px solid gray;
+}
+
+.middlerow{
+	border-top: 2px solid gray;
+	border-bottom: 2px solid gray;
+}
+
+
+body{
+	
+	background: url(images/Meredith_Orsino_background.png);
+	background-size: cover;
+	background-position: center;
+
+}
+
+table{
+	margin: auto;
+	padding-top: 25px;
+}
+
+html{
+	height: 100%;
+}
+
+h2{
+	color:white;
+	font-family: Julius Sans One;
+	font-size: 50px;
+	text-align: center;
+	text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4),
+				0px 8px 13px rgba(0, 0, 0, 0.1),
+				0px 18px 23px rgba(0, 0, 0, 0.1);
+}
+
+hr{
+color: gray;
+	width: 40%;
+}
+
+#newGame{
+	float: right;
+}
+
+.mage{
+	background-image: url(images/orsino.jpg);
+
+}
+
+.templar{
+	background-image: url(images/meredith_2.png);
+
+}
+
+tbody{
+	background: white;
+	opacity: 50px;
+}
