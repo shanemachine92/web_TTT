@@ -32,10 +32,24 @@ html{
 	height: 100%;
 }
 
+h1{
+	color: white;
+}
+
 h2{
-	color:white;
+	color: white;
 	font-family: Julius Sans One;
 	font-size: 50px;
+	text-align: center;
+	text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4),
+				0px 8px 13px rgba(0, 0, 0, 0.1),
+				0px 18px 23px rgba(0, 0, 0, 0.1);
+}
+
+h3{
+	color: white;
+	font-family: Julius Sans One;
+	font-size: 30px;
 	text-align: center;
 	text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4),
 				0px 8px 13px rgba(0, 0, 0, 0.1),
