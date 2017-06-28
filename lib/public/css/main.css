@@ -53,12 +53,10 @@ color: gray;
 
 .mage{
 	background-image: url(../images/orsino.jpg);
-
 }
 
 .templar{
 	background-image: url(../images/meredith_2.png);
-
 }
 
 tbody{
@@ -79,6 +77,9 @@ tbody{
     border-radius: 5px;
     color: black;
     font-weight: bold;
-    position: static;
+}
 
+a{
+	color: black;
+	text-align: center;
 }

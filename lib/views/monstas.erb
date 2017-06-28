@@ -1,0 +1,19 @@
+<% if @message %>
+	<p> <%= @message %></p>
+<% end %>
+
+<% if @cell %>
+	<h1>Hello from <%= @cell %></h1>
+<% end %>
+
+
+<form action = "/do_turn" method = "post">
+  <input type="text" name="cell" value = "<%= @cell %>">
+  <input type="submit">
+</form>
+
+<ul>
+  <% @cells.each do |cell| %>
+    <li><%= cell %></li>
+  <% end %>
+<ul>
