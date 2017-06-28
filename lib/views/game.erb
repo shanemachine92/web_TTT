@@ -1,43 +1,40 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Mages vs. Templars</title>
-		<link rel="stylesheet" href="css/main.css">
+<head>
+	<title>Mages vs. Templars</title>
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
 
-	</head>
-	<body>
+  <h2>Mages vs. Templars</h2>
 
-		<h2>Mages vs. Templars</h2>
+	<button id = "newGame">New Game</button>
 
-		<div id = "stripe">
-			<button id = "newGame">New Game</button>
-		</div>
+	<div class = "container">
+		<table>
+			<tr>
+				<td><a href = "/do_turn/:cell">Click Here</a></td>
+				<td class = "middlecolumn"><a href = "/">Click Here</a></td>
+				<td><a href = "/">Click Here</a></td>
+			</tr>
+			<tr>
+				<td class = "middlerow"><a href = "/">Click Here</a></td>
+				<td class = "middlecolumn middlerow"><a href = "/">Click Here</a></td>
+				<td class = "middlerow"><a href = "/">Click Here</a></td>
+			</tr>
+			<tr>
+				<td><a href = "/">Click Here</a></td>
+				<td class = "middlecolumn"><a href = "/">Click Here</a></td>
+				<td><a href = "/">Click Here</a></td>
+			</tr>
+		</table>
+	<div>
 
-		<div class = "container">
-			<table>
-				<tr>
-					<td id = "one" class = "mage"></td>
-					<td id = "two" class = "middlecolumn"></td>
-					<td id = "three" class = "templar"></td>
-				</tr>
-				<tr>
-					<td id = "four" class = "middlerow"></td>
-					<td id = "five" class = "middlecolumn middlerow"></td>
-					<td id = "six" class = "middlerow"></td>
-				</tr>
-				<tr>
-					<td id = "seven"></td>
-					<td id = "eight" class = "middlecolumn"></td>
-					<td id = "nine"></td>
-				</tr>
-			</table>
-
-
-		<div>
 		<script
 	  src="https://code.jquery.com/jquery-3.2.1.js"
 	  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
 	  crossorigin="anonymous"></script>
 	 <script src="js/main.js"></script>
-	</body>
+</body>
 </html>
+

@@ -27,14 +27,6 @@ class Game
 		@game_over = false
 	end
 
-	def get_binding
-    binding()
-  end
-
-	def render()
-    ERB.new(@template).result(binding)
-  end
-
 	def switch_player (current_player, player1, player2)
 		@current_player =
 			if @current_player == @player1

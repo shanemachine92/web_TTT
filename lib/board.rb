@@ -33,7 +33,7 @@ class Board
     false
   end
 
-    def board_rows
+  def board_rows
     rows = [
       @cells[:one], @cells[:two], @cells[:three],
       @cells[:four], @cells[:five], @cells[:six],
