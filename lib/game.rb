@@ -1,9 +1,10 @@
 require_relative './board'
 require_relative './player'
+require 'erb'
 
 class Game
-	def intro
-		puts 'Hello, brave ones. It is time to decide the fate of Ferelden in Mages vs. Templars'
+	def intro(welcome)
+		@welcome = 'Hello, brave ones. It is time to decide the fate of Ferelden in Mages vs. Templars'
 
 		puts 'Mage, what is your name?'
 		@player1.name = gets.chomp
@@ -25,6 +26,14 @@ class Game
 		@current_player = @player1
 		@game_over = false
 	end
+
+	def get_binding
+    binding()
+  end
+
+	def render()
+    ERB.new(@template).result(binding)
+  end
 
 	def switch_player (current_player, player1, player2)
 		@current_player =
@@ -74,8 +83,6 @@ class Game
 		@board.render
 	end
 end
-
-Game.new.play_game
 
 
 

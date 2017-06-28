@@ -17,7 +17,7 @@ td{
 
 body{
 	
-	background: url(images/Meredith_Orsino_background.png);
+	background: url(../images/Meredith_Orsino_background.png);
 	background-size: cover;
 	background-position: center;
 
@@ -52,12 +52,12 @@ color: gray;
 }
 
 .mage{
-	background-image: url(images/orsino.jpg);
+	background-image: url(../images/orsino.jpg);
 
 }
 
 .templar{
-	background-image: url(images/meredith_2.png);
+	background-image: url(../images/meredith_2.png);
 
 }
 
