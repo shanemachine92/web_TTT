@@ -9,28 +9,28 @@ enable :sessions
 
 
 	get '/' do 
-	  session[:player1] = nil
-	  session[:player2] = nil
+	  session[:player1_name] = nil
+	  session[:player2_name] = nil
 	  session[:current_player] = 'someone'
-	  session[:matrix] = {
-      one: ' ', two: ' ', three: ' ',
-      four: ' ', five: ' ', six: ' ',
-      seven: ' ', eight: ' ', nine: ' ',
-    }
+	  session[:player1] = Player.new(session[:player1_name], 'M', session[:board])
+	  session[:player2] = Player.new(session[:player2_name], 'T', session[:board])
 	  erb :index
 	end
 
 	post '/players' do
-	session[:player1] = params[:player1]
-	session[:player2] = params[:player2]
+	session[:player1_name] = params[:player1_name]
+	session[:player2_name] = params[:player2_name]
 		erb :players
 	end
 
 	get '/game' do
+	 session[:board] = Board.new
+	 session[:first] = [true, false].sample
+	 session[:switch_player] = false 
+	 session[:game_over] = nil
+  
 		erb :game
 	end
-
-
 
 	get '/do_turn' do
 		@message = session.delete(:message)
@@ -52,16 +52,5 @@ enable :sessions
 	  	erb :monstas
 		end
 	end
-
-	# def store_cell(filename, string)
-	#   File.open(filename, "a+") do |file|
-	#     file.puts(string)
-	#   end
-	# end
-
-	# def read_cells
-	#   return [] unless File.exist?("cells.txt")
-	#   File.read("cells.txt").split("\n")
-	# end
 
 

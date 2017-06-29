@@ -3,29 +3,15 @@ require_relative './player'
 require 'erb'
 
 class Game
-	def intro(welcome)
-		@welcome = 'Hello, brave ones. It is time to decide the fate of Ferelden in Mages vs. Templars'
 
-		puts 'Mage, what is your name?'
-		@player1.name = gets.chomp
-
-		puts "Welcome to the circle, #{@player1.name}."
-
-		puts 'Templar, what is your name?'
-		@player2.name = gets.chomp
-		puts "Good luck in the order, #{@player2.name}."
-
-		puts 'Now. Let us begin.'
-	end
-
-	def initialize
-		@board = Board.new
-		@player1 = Player.new(@player_name, 'M', @board)
-		@player2 = Player.new(@player_name, 'T', @board)
-		@total_moves = 0
-		@current_player = @player1
-		@game_over = false
-	end
+	# def initialize
+	# 	@board = Board.new
+	# 	@player1 = Player.new(@player_name, 'M', @board)
+	# 	@player2 = Player.new(@player_name, 'T', @board)
+	# 	@total_moves = 0
+	# 	@current_player = @player1
+	# 	@game_over = false
+	# end
 
 	def switch_player (current_player, player1, player2)
 		@current_player =
