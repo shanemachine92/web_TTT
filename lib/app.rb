@@ -11,7 +11,6 @@ enable :sessions
 	get '/' do 
 	  session[:player1_name] = nil
 	  session[:player2_name] = nil
-	  session[:current_player] =
 	  session[:player1] = Player.new(session[:player1_name], 'M', session[:board])
 	  session[:player2] = Player.new(session[:player2_name], 'T', session[:board])
 	  erb :index
@@ -27,9 +26,8 @@ enable :sessions
 	get '/game' do
 	 session[:player1] = Player.new(session[:player1_name], 'M', session[:board])
 	 session[:player2] = Player.new(session[:player2_name], 'T', session[:board])
+	 session[:current_player] = session[:player2]
 	 session[:board] = Board.new
-	 session[:first] = [true, false].sample
-	 session[:switch_player] = false 
 	 session[:game_over] = nil
   
 		erb :game
