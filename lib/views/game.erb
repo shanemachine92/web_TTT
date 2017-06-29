@@ -8,9 +8,10 @@
 
   <h2>Mages vs. Templars</h2>
 
-  <h2> It is your turn, <%= @cell %> </h2>
 
-  <%= @board %>
+  <h2> It is your turn, <%= session[:current_player] %> </h2>
+
+  <%= @message %>
 
 	<button class = "btn" id = "newGame"> New Game </button>
 

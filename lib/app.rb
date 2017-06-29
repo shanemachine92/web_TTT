@@ -9,44 +9,49 @@ enable :sessions
 
 
 	get '/' do 
-	 "This is the index page"
+	  session[:player1] = nil
+	  session[:player2] = nil
+	  session[:current_player] = 'someone'
+	  session[:matrix] = {
+      one: ' ', two: ' ', three: ' ',
+      four: ' ', five: ' ', six: ' ',
+      seven: ' ', eight: ' ', nine: ' ',
+    }
 	  erb :index
 	end
 
-	post '/' do
-		@player1 = params["player1"]
-		@player2 = params["player2"]
-		@board = "board"
+	post '/players' do
+	session[:player1] = params[:player1]
+	session[:player2] = params[:player2]
 		erb :players
-		params.inspect
 	end
 
 	get '/game' do
-		@player1 = params["player1"]
-		@player2 = params["player2"]
 		erb :game
 	end
 
-	# get '/do_turn' do
-	# 	@message = session.delete(:message)
-	# 	@cell = params["cell"]
-	# 	@cells = read_cells
-	# 	erb :monstas
-	# end
 
-	# post '/do_turn' do
-	#   @cell = params["cell"]
-	#   validator = CellValidator.new(@cell, read_cells)
 
-	#   if validator.valid?
-	#   	store_cell("cells.txt", @cell)
-	#   	session[:message] = "#{@cell} is now under your watch."
-	#   	redirect "/do_turn?cell=#{@cell}"
-	#   else
-	#   	session[:message] = validator.message
-	#   	erb :monstas
-	# 	end
-	# end
+	get '/do_turn' do
+		@message = session.delete(:message)
+		@cell = params["cell"]
+		@cells = read_cells
+		erb :monstas
+	end
+
+	post '/do_turn' do
+	  @cell = params["cell"]
+	  validator = CellValidator.new(@cell, read_cells)
+
+	  if validator.valid?
+	  	store_cell("cells.txt", @cell)
+	  	session[:message] = "#{@cell} is now under your watch."
+	  	redirect "/do_turn?cell=#{@cell}"
+	  else
+	  	session[:message] = validator.message
+	  	erb :monstas
+		end
+	end
 
 	# def store_cell(filename, string)
 	#   File.open(filename, "a+") do |file|
