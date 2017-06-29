@@ -23,14 +23,8 @@ class Game
 		@current_player
 	end
 
-	def help
-	  puts 'one, two, three'
-	  puts 'four, five, six'
-	  puts 'seven, eight, nine'
-	end
-
 	def play_game
-		@intro = self.intro
+	
 		until @game_over
 			@board.render
 			puts "Your turn, #{@current_player.name}."

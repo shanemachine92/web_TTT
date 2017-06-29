@@ -14,16 +14,17 @@ class Board
     false
   end
 
-  def game_won?(piece)
-    return true if win?(board_rows, piece) || win?(board_columns, piece) || win?(board_diagonals, piece)
+  def set_cell(cell, piece)
+    puts '????????'
+    puts piece
+    puts cells
+    puts '????????'
+    @cells[cell] = piece
+    puts cells
   end
 
-  def render
-    puts "#{@cells[:one]}|#{@cells[:two]}|#{@cells[:three]}"
-    puts '-----'
-    puts "#{@cells[:four]}|#{@cells[:five]}|#{@cells[:six]}"
-    puts '-----'
-    puts "#{@cells[:seven]}|#{@cells[:eight]}|#{@cells[:nine]}"
+  def game_won?(piece)
+    return true if win?(board_rows, piece) || win?(board_columns, piece) || win?(board_diagonals, piece)
   end
 
   def win?(win_type, piece)

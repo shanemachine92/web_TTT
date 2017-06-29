@@ -7,7 +7,7 @@ class Player
     @board = board
   end
   
-  def do_turn (selected_cell)
-    @board.cells[selected_cell.to_sym] = @piece
-  end
+  # def do_turn (selected_cell)
+  #   @board.cells[selected_cell.to_sym] = @piece
+  # end
 end

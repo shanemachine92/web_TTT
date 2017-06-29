@@ -5,6 +5,7 @@ require_relative './player'
 require_relative './cell_validator'
 require 'sinatra'
 require 'json'
+require 'pry'
 
 enable :sessions
 
@@ -24,34 +25,21 @@ enable :sessions
 	end
 
 	get '/game' do
+	 session[:board] = Board.new
 	 session[:player1] = Player.new(session[:player1_name], 'M', session[:board])
 	 session[:player2] = Player.new(session[:player2_name], 'T', session[:board])
+	 session[:total_moves] = 0
 	 session[:current_player] = session[:player2]
-	 session[:board] = Board.new
-	 session[:game_over] = nil
+	 session[:game_over] = false
   
 		erb :game
 	end
 
-	get '/do_turn' do
-		@message = session.delete(:message)
-		@cell = params["cell"]
-		@cells = read_cells
-		erb :monstas
-	end
-
 	post '/do_turn' do
-	  @cell = params["cell"]
-	  validator = CellValidator.new(@cell, read_cells)
-
-	  if validator.valid?
-	  	store_cell("cells.txt", @cell)
-	  	session[:message] = "#{@cell} is now under your watch."
-	  	redirect "/do_turn?cell=#{@cell}"
-	  else
-	  	session[:message] = validator.message
-	  	erb :monstas
-		end
+		session[:board].set_cell(params[:cell].to_sym, session[:current_player].piece)
+		puts '!!!!!!!!'
+		puts session[:board]
+		puts '!!!!!!!!'
+		session[:current_player].piece
 	end
-
 
