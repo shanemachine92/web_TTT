@@ -17,19 +17,19 @@
 	<div class = "container">
 		<table>
 			<tr>
-				<td class = ""><a href = "/do_turn/:cell">Click Here</a></td>
-				<td class = "middlecolumn"><a href = "/">Click Here</a></td>
-				<td><a href = "/">Click Here</a></td>
+				<td><%= session[:board].cells[:one] %></td>
+				<td class = "middlecolumn"><%= session[:board].cells[:two] %></td>
+				<td><a href = "/"><%= session[:board].cells[:three] %></td>
 			</tr>
 			<tr>
-				<td class = "middlerow"><a href = "/">Click Here</a></td>
-				<td class = "middlecolumn middlerow"><a href = "/">Click Here</a></td>
-				<td class = "middlerow"><a href = "/">Click Here</a></td>
+				<td class = "middlerow"><%= session[:board].cells[:four] %></td>
+				<td class = "middlecolumn middlerow"><%= session[:board].cells[:five] %></td>
+				<td class = "middlerow"><%= session[:board].cells[:six] %></td>
 			</tr>
 			<tr>
-				<td><a href = "/">Click Here</a></td>
-				<td class = "middlecolumn"><a href = "/">Click Here</a></td>
-				<td><a href = "/">Click Here</a></td>
+				<td><%= session[:board].cells[:seven] %></td>
+				<td class = "middlecolumn"><%= session[:board].cells[:eight] %></td>
+				<td><%= session[:board].cells[:nine] %></td>
 			</tr>
 		</table>
 	<div>

@@ -4,26 +4,29 @@ require_relative './board'
 require_relative './player'
 require_relative './cell_validator'
 require 'sinatra'
+require 'json'
 
 enable :sessions
-
 
 	get '/' do 
 	  session[:player1_name] = nil
 	  session[:player2_name] = nil
-	  session[:current_player] = 'someone'
+	  session[:current_player] =
 	  session[:player1] = Player.new(session[:player1_name], 'M', session[:board])
 	  session[:player2] = Player.new(session[:player2_name], 'T', session[:board])
 	  erb :index
 	end
 
 	post '/players' do
+
 	session[:player1_name] = params[:player1_name]
 	session[:player2_name] = params[:player2_name]
 		erb :players
 	end
 
 	get '/game' do
+	 session[:player1] = Player.new(session[:player1_name], 'M', session[:board])
+	 session[:player2] = Player.new(session[:player2_name], 'T', session[:board])
 	 session[:board] = Board.new
 	 session[:first] = [true, false].sample
 	 session[:switch_player] = false 
