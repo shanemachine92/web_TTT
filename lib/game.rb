@@ -10,7 +10,6 @@ attr_accessor :player1, :player2, :board, :current_player, :total_moves, :messag
 		@total_moves = 0
 		@current_player = player1
 		@game_over = false
-		@message = nil
 		@player1 = player1
 		@player2 = player2
 	end

@@ -31,4 +31,5 @@ enable :sessions
 		session[:game].play_game(params[:cell].to_sym, session[:game].current_player.piece)
 		content_type :json
 		{ :board_cells => session[:game].board.cells, :piece => session[:game].current_player.piece, :game_over => session[:game].game_over, :total_moves => session[:game].total_moves, :current_player => session[:game].current_player.name}.to_json
+		# session[:message] = 'It is your turn @current_player.name'
 	end
