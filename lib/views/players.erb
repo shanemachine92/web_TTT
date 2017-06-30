@@ -5,12 +5,13 @@
 	<link rel="stylesheet" href="css/main.css">
 </head>
 <body>
+	<div class = "intro_text">
+		<h2>Welcome to the Kirwall's Circle, <%= @player1.name %>. </h2>
+		<h2>Welcome to the Order, <%= @player2.name %>. </h2>
+		<h2>May The Maker lead you to victory. </h2>
+	</div>
 
-	<h2>Welcome to the Kirwall's Circle, <%= @player1.name %>. </h2>
-	<h2>Welcome to the Order, <%= @player2.name %>. </h2>
-	<h2>May The Maker lead you to victory. </h2>
-
-	<a class = "btn" type = "button" href = "/game"> Enter Thedas</a>
+	<a class = "btn" id ="enter" type = "button" href = "/game"> Enter Thedas</a>
 
 	</body>
 </html>

@@ -29,6 +29,11 @@ enable :sessions
 	end
 
 	post '/set_cell' do
+		puts session[:game].total_moves
+		puts session[:game].game_over
+		puts session[:game].board.game_won?(session[:game].current_player.piece)
+		puts session[:game].current_player.name
+		puts session[:game].board.cells
 		session[:game].play_game(params[:cell].to_sym, session[:game].current_player.piece)
 		session[:game].current_player.piece
 	end

@@ -12,14 +12,11 @@
   <h3> It is your turn, <%= @game.current_player.name %> </h3>
   <h3><%= @message %> </h3>
 
-
-	<button class = "btn" id = "newGame"> New Game </button>
-
 	<div class = "container">
 		<table>
 			<tr>
 				<td id = "one" class = "cell"><%= @game.board.cells[:one]%></td>
-				<td id = "two" class = " cell middlecolumn mage"><%= @game.board.cells[:two]%></td>
+				<td id = "two" class = " cell middlecolumn"><%= @game.board.cells[:two]%></td>
 				<td id = "three" class = "cell"><a href = "/"><%= @game.board.cells[:three] %></td>
 			</tr>
 			<tr>
@@ -34,6 +31,8 @@
 			</tr>
 		</table>
 	<div>
+
+		<button class = "btn" id = "newGame"> New Game </button>
 
 		<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
 	 <script src="js/main.js"></script>

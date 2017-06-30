@@ -97,3 +97,17 @@ a{
 	color: black;
 	text-align: center;
 }
+
+.intro_text{
+	width:50%;
+	margin: auto;
+}
+
+form{
+	margin:auto;
+	width:10%;
+}
+
+#enter{
+	margin: 45%;
+}
