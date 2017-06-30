@@ -19,34 +19,26 @@ class Board
   end
 
   def game_won?(piece)
-    return true if win?(board_rows, piece) || win?(board_columns, piece) || win?(board_diagonals, piece)
+    return true if win?(win_scenarios)
   end
 
-  def win?(win_type, piece)
-    win_type.each_slice(3) do |type|
+  def win?(win_scenarios)
+    win_scenarios.each_slice(3) do |scenarios|
+      # binding.pry
+      # puts 'this is coming from win'
       return true if type.all? {|cell| @cells[cell] == piece }
     end
     false
   end
 
-  def board_rows
-    rows = [
+  def win_scenarios
+    possible_wins = [
       @cells[:one], @cells[:two], @cells[:three],
       @cells[:four], @cells[:five], @cells[:six],
-      @cells[:seven], @cells[:eight], @cells[:nine]
-    ]
-  end
-
-  def board_columns
-    columns = [
+      @cells[:seven], @cells[:eight], @cells[:nine],
       @cells[:one], @cells[:four], @cells[:seven],
       @cells[:two], @cells[:five], @cells[:eight],
-      @cells[:three], @cells[:six], @cells[:nine]
-    ]
-  end
-
-  def board_diagonals
-     diagonals = [
+      @cells[:three], @cells[:six], @cells[:nine],
       @cells[:one], @cells[:five], @cells[:nine],
       @cells[:three], @cells[:five], @cells[:seven]
     ]
