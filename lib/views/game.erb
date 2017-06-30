@@ -9,7 +9,7 @@
   <h2>Mages vs. Templars</h2>
 
 
-  <h3> It is your turn, <%= session[:current_player].name %> </h3>
+  <h3> It is your turn, <%= @game.player1.name %> </h3>
 
 
 	<button class = "btn" id = "newGame"> New Game </button>
@@ -17,19 +17,19 @@
 	<div class = "container">
 		<table>
 			<tr>
-				<td id = "one" class = "cell"><%= session[:board].cells[:one] %></td>
-				<td id = "two" class = " cell middlecolumn mage"><%= session[:board].cells[:two] %></td>
-				<td id = "three" class = "cell"><a href = "/"><%= session[:board].cells[:three] %></td>
+				<td id = "one" class = "cell"><%= @game.board.cells[:one]%></td>
+				<td id = "two" class = " cell middlecolumn mage"><%= @game.board.cells[:two]%></td>
+				<td id = "three" class = "cell"><a href = "/"><%= @game.board.cells[:three] %></td>
 			</tr>
 			<tr>
-				<td id = "four" class = " cell middlerow"><%= session[:board].cells[:four] %></td>
-				<td id = "five" class = " cell middlecolumn middlerow"><%= session[:board].cells[:five] %></td>
-				<td id = "six" class = " cell middlerow"><%= session[:board].cells[:six] %></td>
+				<td id = "four" class = " cell middlerow"><%= @game.board.cells[:four]%></td>
+				<td id = "five" class = " cell middlecolumn middlerow"><%= @game.board.cells[:five] %></td>
+				<td id = "six" class = " cell middlerow"><%= @game.board.cells[:six] %></td>
 			</tr>
 			<tr>
-				<td id = "seven" class = "cell"><%= session[:board].cells[:seven] %></td>
-				<td id = "eight" class = " cell middlecolumn"><%= session[:board].cells[:eight] %></td>
-				<td id = "nine" class = "cell"><%= session[:board].cells[:nine] %></td>
+				<td id = "seven" class = "cell"><%= @game.board.cells[:seven] %></td>
+				<td id = "eight" class = " cell middlecolumn"><%= @game.board.cells[:eight] %></td>
+				<td id = "nine" class = "cell"><%= @game.board.cells[:nine] %></td>
 			</tr>
 		</table>
 	<div>
@@ -38,5 +38,3 @@
 	 <script src="js/main.js"></script>
 </body>
 </html>
-
-<!-- session[:game].board.cells[:one] -->

@@ -9,8 +9,8 @@ class Board
     }
   end
 
-  def cell_empty?(selected_cell)
-    return true if @cells[selected_cell.to_sym] == ' '
+  def cell_empty?(cell)
+    return true if @cells[cell] == ' '
     false
   end
 

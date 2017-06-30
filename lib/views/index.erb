@@ -14,18 +14,13 @@
 
 <h3>Heroes, what are your names?</h3>
 
-<!-- <form action = "/" method = "post">
-  <input type="text" name="player1" value = "<%= @player1 %>">
-  <input type="submit">
-</form> -->
-
 <form action="/players" class="form-horizontal" method = "post">
   <div class="form-group">
     <div class="col-sm-8">
-        <input type="text" class="form-control" name = "player1_name" value = "<%= session[:player1_name] %>" placeholder = "Mage's name" >
+        <input type="text" class="form-control" name = "player1_name" placeholder = "Mage's name" >
     </div>
     <div class="col-sm-4">
-        <input type="text" class="form-control" name = "player2_name" placeholder = "Templar's name" value = "<%= session[:player2_name] %>">
+        <input type="text" class="form-control" name = "player2_name" placeholder = "Templar's name" >
     </div>
     <input type = "submit">	
   </div>
