@@ -18,7 +18,6 @@ enable :sessions
 		@player2 = Player.new(params[:player2_name], 'T')
 		session[:player1] = @player1
 		session[:player2] = @player2
-
 		erb :players
 	end
 
@@ -31,5 +30,5 @@ enable :sessions
 	post '/set_cell' do
 		session[:game].play_game(params[:cell].to_sym, session[:game].current_player.piece)
 		content_type :json
-		{ :piece => session[:game].current_player.piece, :game_over => session[:game].game_over, :total_moves => session[:game].total_moves, :current_player => session[:game].current_player.name}.to_json
+		{ :board_cells => session[:game].board.cells, :piece => session[:game].current_player.piece, :game_over => session[:game].game_over, :total_moves => session[:game].total_moves, :current_player => session[:game].current_player.name}.to_json
 	end

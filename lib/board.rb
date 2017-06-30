@@ -19,28 +19,21 @@ class Board
   end
 
   def game_won?(piece)
-    return true if win?(win_scenarios)
+    return true if win?(piece)
   end
 
-  def win?(win_scenarios)
-    win_scenarios.each_slice(3) do |scenarios|
-      # binding.pry
-      # puts 'this is coming from win'
-      return true if type.all? {|cell| @cells[cell] == piece }
+  def win?(cell)
+    if @cells[:one] != ' ' && @cells[:one] == @cells[:two] && @cells[:two] == @cells[:three] ||
+       @cells[:four] != ' ' && @cells[:four] == @cells[:five] && @cells[:five] == @cells[:six] ||
+       @cells[:seven] != ' ' && @cells[:seven] == @cells[:eight] && @cells[:eight] == @cells[:nine] ||
+       @cells[:one] != ' ' && @cells[:one] == @cells[:four] && @cells[:four] == @cells[:seven] ||
+       @cells[:two] != ' ' && @cells[:two] == @cells[:five] && @cells[:five] == @cells[:eight] ||
+       @cells[:three] != ' ' && @cells[:three] == @cells[:six] && @cells[:six] == @cells[:nine] ||
+       @cells[:one] != ' ' && @cells[:one] == @cells[:five] && @cells[:five] == @cells[:nine] ||
+       @cells[:three] != ' ' && @cells[:three] == @cells[:five] && @cells[:five] == @cells[:seven]
+      return true
+    else
+      false
     end
-    false
-  end
-
-  def win_scenarios
-    possible_wins = [
-      @cells[:one], @cells[:two], @cells[:three],
-      @cells[:four], @cells[:five], @cells[:six],
-      @cells[:seven], @cells[:eight], @cells[:nine],
-      @cells[:one], @cells[:four], @cells[:seven],
-      @cells[:two], @cells[:five], @cells[:eight],
-      @cells[:three], @cells[:six], @cells[:nine],
-      @cells[:one], @cells[:five], @cells[:nine],
-      @cells[:three], @cells[:five], @cells[:seven]
-    ]
   end
 end
