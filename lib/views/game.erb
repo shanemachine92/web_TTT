@@ -14,23 +14,23 @@
 		<table>
 			<tr>
 				<td id = "one" class = "cell"><%= @game.board.cells[:one]%></td>
-				<td id = "two" class = " cell middlecolumn"><%= @game.board.cells[:two]%></td>
+				<td id = "two" class = "cell"><%= @game.board.cells[:two]%></td>
 				<td id = "three" class = "cell"><a href = "/"><%= @game.board.cells[:three] %></td>
 			</tr>
 			<tr>
-				<td id = "four" class = " cell middlerow"><%= @game.board.cells[:four]%></td>
-				<td id = "five" class = " cell middlecolumn middlerow"><%= @game.board.cells[:five] %></td>
-				<td id = "six" class = " cell middlerow"><%= @game.board.cells[:six] %></td>
+				<td id = "four" class = "cell"><%= @game.board.cells[:four]%></td>
+				<td id = "five" class = "cell"><%= @game.board.cells[:five] %></td>
+				<td id = "six" class = "cell"><%= @game.board.cells[:six] %></td>
 			</tr>
 			<tr>
 				<td id = "seven" class = "cell"><%= @game.board.cells[:seven] %></td>
-				<td id = "eight" class = " cell middlecolumn"><%= @game.board.cells[:eight] %></td>
+				<td id = "eight" class = "cell"><%= @game.board.cells[:eight] %></td>
 				<td id = "nine" class = "cell"><%= @game.board.cells[:nine] %></td>
 			</tr>
 		</table>
 	<div>
 
-		<button class = "btn" id = "newGame"> New Game </button>
+		<a class = "btn" id ="enter" type = "button" href = "/"> New Game</a>
 
 		<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
 	 <script src="js/main.js"></script>
