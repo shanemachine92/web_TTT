@@ -9,7 +9,8 @@
   <h2>Mages vs. Templars</h2>
 
 
-  <h3> It is your turn, <%= @game.player1.name %> </h3>
+  <h3> It is your turn, <%= @game.current_player.name %> </h3>
+  <h3><%= @message %> </h3>
 
 
 	<button class = "btn" id = "newGame"> New Game </button>

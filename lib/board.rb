@@ -15,12 +15,7 @@ class Board
   end
 
   def set_cell(cell, piece)
-    puts '????????'
-    puts piece
-    puts cells
-    puts '????????'
     @cells[cell] = piece
-    puts cells
   end
 
   def game_won?(piece)
@@ -29,7 +24,7 @@ class Board
 
   def win?(win_type, piece)
     win_type.each_slice(3) do |type|
-      return true if type.all? {|cell| cell == piece }
+      return true if type.all? {|cell| @cells[cell] == piece }
     end
     false
   end

@@ -3,14 +3,14 @@ require_relative './player'
 require 'erb'
 
 class Game
-attr_accessor :player1, :player2, :board, :current_player
+attr_accessor :player1, :player2, :board, :current_player, :win_type
 
 	def initialize(player1, player2)
 		@board = Board.new
 		@total_moves = 0
 		@current_player = player1
 		@game_over = false
-		@mesage = nil
+		@message = nil
 		@player1 = player1
 		@player2 = player2
 

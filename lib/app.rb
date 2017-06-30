@@ -29,16 +29,7 @@ enable :sessions
 	end
 
 	post '/set_cell' do
-		puts 'PPPPPPPPPPPPPPPP'
-		puts session[:game].current_player.name
-		puts 'PPPPPPPPPPPPPPPP'
 		session[:game].play_game(params[:cell].to_sym, session[:game].current_player.piece)
-
-		puts '!!!!!!!!'
-		puts session[:board]
-		puts session[:game].current_player.name
-		puts '!!!!!!!!'
 		session[:game].current_player.piece
-		# return
 	end
 
