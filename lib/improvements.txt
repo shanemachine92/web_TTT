@@ -1,0 +1,6 @@
+Within 'check for win' render a new board so that you can't keep playing
+Check cell_empty? for front end
+
+disable cell once clicked
+
+refactor win? for front end version
