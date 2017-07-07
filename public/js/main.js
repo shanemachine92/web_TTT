@@ -23,5 +23,3 @@ $('.cell').click(function(event){
 		}
 	})
 });
-
-

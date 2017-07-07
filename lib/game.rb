@@ -42,6 +42,3 @@ attr_accessor :player1, :player2, :board, :current_player, :total_moves, :messag
 			@current_player = switch_player(@current_player, @player1, @player2)
 	end
 end
-
-
-
