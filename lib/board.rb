@@ -15,7 +15,6 @@ class Board
   end
 
   def set_cell(cell, piece)
-    binding.pry
     @cells[cell] = piece
   end
 
