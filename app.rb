@@ -1,13 +1,13 @@
-require_relative './game'
-require_relative './board'
-require_relative './player'
+require './lib/game'
+require './lib/board'
+require './lib/player'
 require 'sinatra'
 require 'json'
 require 'pry'
 
 enable :sessions
 
-	get '/' do 
+	get '/' do
 	  erb :index
 	end
 
