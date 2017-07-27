@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Mages vs. Templars</title>
-	<link rel="stylesheet" href="css/main.css">
+  <title>Mages vs. Templars</title>
+  <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
 
@@ -10,29 +10,29 @@
 
   <h3 id = "message"></h3>
 
-	<div class = "container">
-		<table>
-			<tr>
-				<td id = "one" class = "cell"><%= @game.board.cells[:one]%></td>
-				<td id = "two" class = "cell"><%= @game.board.cells[:two]%></td>
-				<td id = "three" class = "cell"><%= @game.board.cells[:three] %></td>
-			</tr>
-			<tr>
-				<td id = "four" class = "cell"><%= @game.board.cells[:four]%></td>
-				<td id = "five" class = "cell"><%= @game.board.cells[:five] %></td>
-				<td id = "six" class = "cell"><%= @game.board.cells[:six] %></td>
-			</tr>
-			<tr>
-				<td id = "seven" class = "cell"><%= @game.board.cells[:seven] %></td>
-				<td id = "eight" class = "cell"><%= @game.board.cells[:eight] %></td>
-				<td id = "nine" class = "cell"><%= @game.board.cells[:nine] %></td>
-			</tr>
-		</table>
-	<div>
+  <div class = "container">
+    <table>
+      <tr>
+        <td id = "one" class = "cell"><%= @game.board.cells[:one]%></td>
+        <td id = "two" class = "cell"><%= @game.board.cells[:two]%></td>
+        <td id = "three" class = "cell"><%= @game.board.cells[:three] %></td>
+      </tr>
+      <tr>
+        <td id = "four" class = "cell"><%= @game.board.cells[:four]%></td>
+        <td id = "five" class = "cell"><%= @game.board.cells[:five] %></td>
+        <td id = "six" class = "cell"><%= @game.board.cells[:six] %></td>
+      </tr>
+      <tr>
+        <td id = "seven" class = "cell"><%= @game.board.cells[:seven] %></td>
+        <td id = "eight" class = "cell"><%= @game.board.cells[:eight] %></td>
+        <td id = "nine" class = "cell"><%= @game.board.cells[:nine] %></td>
+      </tr>
+    </table>
+  <div>
 
-		<a class = "btn" id ="enter" type = "button" href = "/"> New Game</a>
+  <a class = "btn" id ="enter" type = "button" href = "/"> New Game</a>
 
-		<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
-	 <script src="js/main.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
