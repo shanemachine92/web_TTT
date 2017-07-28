@@ -22,7 +22,6 @@ $('.cell').click(function(event){
   $.post('/set_cell', { cell: selectedCell.id }).done(function(data){
      if (data.game_over === true && data.total_moves === 9){
       $('#message').text("Neither side is victorious. Maker, help us.");
-
     } 
     else if (data.game_over === true && data.total_moves != 9){
       $('#message').text("Your side is victorious. The fate of Ferelden lies with you.");
