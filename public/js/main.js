@@ -1,6 +1,6 @@
 
-$("#newGame").click(function(){
-  $("td").removeClass()
+$('#newGame').click(function(){
+  $('td').removeClass()
 });
 
 $('.cell').click(function(event){

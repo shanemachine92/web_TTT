@@ -22,15 +22,19 @@ class Board
     return true if win?(piece)
   end
 
+  def win_helper(x, y, z)
+    !(x).empty? && x == y && y == z
+  end
+
   def win?(cell)
-    if !(@cells[:one]).empty?  && @cells[:one] == @cells[:two] && @cells[:two] == @cells[:three] ||
-       !(@cells[:four]).empty? && @cells[:four] == @cells[:five] && @cells[:five] == @cells[:six] ||
-       !(@cells[:seven]).empty? && @cells[:seven] == @cells[:eight] && @cells[:eight] == @cells[:nine] ||
-       !(@cells[:one]).empty? && @cells[:one] == @cells[:four] && @cells[:four] == @cells[:seven] ||
-       !(@cells[:two]).empty? && @cells[:two] == @cells[:five] && @cells[:five] == @cells[:eight] ||
-       !(@cells[:three]).empty? && @cells[:three] == @cells[:six] && @cells[:six] == @cells[:nine] ||
-       !(@cells[:one]).empty? && @cells[:one] == @cells[:five] && @cells[:five] == @cells[:nine] ||
-       !(@cells[:three]).empty? && @cells[:three] == @cells[:five] && @cells[:five] == @cells[:seven]
+    if win_helper(@cells[:one], @cells[:two], @cells[:three]) ||
+       win_helper(@cells[:four], @cells[:five], @cells[:six]) ||
+       win_helper(@cells[:seven], @cells[:eight], @cells[:nine]) ||
+       win_helper(@cells[:one], @cells[:four], @cells[:seven]) ||
+       win_helper(@cells[:two], @cells[:five], @cells[:eight]) ||
+       win_helper(@cells[:three], @cells[:six], @cells[:nine]) ||
+       win_helper(@cells[:one], @cells[:five], @cells[:nine]) ||
+       win_helper(@cells[:three], @cells[:five], @cells[:seven])
       return true
     else
       false
