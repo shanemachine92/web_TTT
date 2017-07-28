@@ -6,7 +6,6 @@ $('#newGame').click(function(){
 $('.cell').one('click', function(event){
   var selectedCell = event.target
   $.post('/set_cell', { cell: selectedCell.id }).done(function(data){
-    console.log(data)
     if (data.piece === 'M') {
       $(selectedCell).addClass('mage');
     }
