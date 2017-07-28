@@ -10,12 +10,11 @@ class Board
   end
 
   def cell_empty?(cell)
-    return true if (@cells[cell]).empty?
-    false
+    (@cells[cell]).empty?
   end
 
   def set_cell(cell, piece)
-    @cells[cell] = piece
+      @cells[cell] = piece
   end
 
   def game_won?(piece)

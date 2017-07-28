@@ -3,14 +3,15 @@ $('#newGame').click(function(){
   $('td').removeClass()
 });
 
-$('.cell').click(function(event){
+$('.cell').one('click', function(event){
   var selectedCell = event.target
   $.post('/set_cell', { cell: selectedCell.id }).done(function(data){
+    console.log(data)
     if (data.piece === 'M') {
-      $(selectedCell).addClass('mage')
+      $(selectedCell).addClass('mage');
     }
-    else {
-      $(selectedCell).addClass('templar')
+    else if (data.piece === 'T') {
+      $(selectedCell).addClass('templar');
     }
   })
 });
@@ -19,13 +20,25 @@ $('.cell').click(function(event){
   var selectedCell = event.target
   $.post('/set_cell', { cell: selectedCell.id }).done(function(data){
      if (data.game_over === true && data.total_moves === 9){
-      $('#message').text("Neither side is victorious. Maker, help us.")
+      $('#message').text("Neither side is victorious. Maker, help us.");
+      $('table').off('click', '.cell')
     } 
     else if (data.game_over === true && data.total_moves != 9){
-      $('#message').text("Your side is victorious. The fate of Ferelden lies with you.")
+      $('#message').text("Your side is victorious. The fate of Ferelden lies with you.");
     }
     else {
-       $('#message').text("Make your move, " + data.current_player + ".")
+       $('#message').text("Make your move, " + data.current_player + ".");
     }
   })
-})
+});
+
+
+$('table').click(function(event){
+  var selectedCell = event.target
+  $.post('/set_cell', { cell: selectedCell.id }).done(function(data){
+    if(data.game_over === true){
+      $('td').attr('disabled', true);
+    }
+  })
+});
+
