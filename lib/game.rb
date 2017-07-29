@@ -3,7 +3,7 @@ require_relative './player'
 require 'erb'
 
 class Game
-attr_accessor :player1, :player2, :board, :current_player, :total_moves, :message, :game_over
+  attr_accessor :player1, :player2, :board, :current_player, :total_moves, :message, :game_over
 
   def initialize(player1, player2)
     @board = Board.new
@@ -25,16 +25,16 @@ attr_accessor :player1, :player2, :board, :current_player, :total_moves, :messag
   end
 
   def play_game(cell, piece)
-      if @board.cell_empty?(cell)
-        @board.set_cell(cell, piece)
-        @total_moves += 1
-      end
+    if @board.cell_empty?(cell)
+      @board.set_cell(cell, piece)
+      @total_moves += 1
+    end
 
-      if @board.game_won?(piece)
-        @game_over = true
-      elsif @total_moves == 9
-        @game_over = true
-      end
-      @current_player = switch_player(@current_player, @player1, @player2)
+    if @board.game_won?(piece)
+      @game_over = true
+    elsif @total_moves == 9
+      @game_over = true
+    end
+    @current_player = switch_player(@current_player, @player1, @player2)
   end
 end
