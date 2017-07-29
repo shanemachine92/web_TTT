@@ -1,12 +1,19 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    autoprefixer-rails (7.1.0)
+      execjs
     backports (3.8.0)
+    bootstrap (4.0.0.alpha6)
+      autoprefixer-rails (>= 6.0.3)
+      sass (>= 3.4.19)
+    execjs (2.7.0)
     multi_json (1.12.1)
     mustermann (1.0.0)
     rack (2.0.3)
     rack-protection (2.0.0)
       rack
+    sass (3.4.24)
     sinatra (2.0.0)
       mustermann (~> 1.0)
       rack (~> 2.0)
@@ -25,6 +32,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bootstrap (~> 4.0.0.alpha6)
   sinatra (~> 2.0)
   sinatra-contrib (~> 2.0)
 
