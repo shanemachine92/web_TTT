@@ -18,11 +18,11 @@ class Board
   end
 
   def game_won?(piece)
-    return true if win?(piece)
+    win?(piece)
   end
 
   def win_helper(x, y, z)
-    x.present? && x == y && y == z
+    !(x).empty? && x == y && y == z
   end
 
   def win?(cell)
