@@ -29,12 +29,8 @@ class Game
       @board.set_cell(cell, piece)
       @total_moves += 1
     end
-
-    if @board.game_won?(piece)
-      @game_over = true
-    elsif @total_moves == 9
-      @game_over = true
-    end
+    
+    game_over = @total_moves == 9 || @board.game_won?(piece)
     @current_player = switch_player(@current_player, @player1, @player2)
   end
 end
