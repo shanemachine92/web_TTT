@@ -16,7 +16,6 @@ $('.cell').click(function(event){
   })
 });
 
-
 $('.cell').one('click', function(event){
   var selectedCell = event.target
   $.post('/set_cell', { cell: selectedCell.id }).done(function(data){

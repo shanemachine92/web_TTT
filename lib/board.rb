@@ -14,7 +14,7 @@ class Board
   end
 
   def set_cell(cell, piece)
-      @cells[cell] = piece
+    @cells[cell] = piece
   end
 
   def game_won?(piece)
